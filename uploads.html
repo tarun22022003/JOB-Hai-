@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Uploads</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('/static/Images/uploads.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Take remaining space */
+            display: flex;
+            flex-wrap: wrap; /* Allow cards to wrap */
+            justify-content: center; /* Center-align cards horizontally */
+            align-items: center; /* Center-align cards vertically */
+            padding: 20px;
+        }
+        .candidate-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px; /* Add space between cards */
+            width: 300px; /* Set fixed width for cards */
+            transition: transform 0.3s ease;
+        }
+        .candidate-card:hover {
+            transform: translateY(-5px);
+        }
+        .bottom-buttons {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .back, .new {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        .back:hover, .new:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Your Uploads:</h1>
+    <div class="container">
+        {% if uploads %}
+            {% for new_jobs in uploads %}
+                <div class="candidate-card">
+                    <h2>{{ new_jobs.job_title }}</h2>
+                    <p><strong>Company Name:</strong> {{ new_jobs.company_name }}</p>
+                    <p><strong>Location:</strong> {{ new_jobs.job_location }}</p>
+                    <p><strong>Description:</strong> {{ new_jobs.job_description }}</p>        
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No Uploads found.</p> 
+        {% endif %}
+    </div>
+    <div class="bottom-buttons">
+        <a href="/index_c" class="back">Back</a>
+        <a href="/new_job" class="new">New Upload</a>
+    </div>
+</body>
+</html>

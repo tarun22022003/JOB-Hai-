@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate List</title>
+    <style>
+        h1{
+            font-family: fantasy;
+            font-weight: bolder;
+        }
+        .back{
+            color: black;
+            font-size: larger;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(122, 209, 233);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .candidate-card {
+            background-color: rgb(198, 246, 55);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .candidate-card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .candidate-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .candidate-card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Candidates Applied:</h1>
+    <div class="container">
+        {% if candidates %}
+            {% for Candidate in candidates %}
+                <div class="candidate-card">
+                    <h2>{{ Candidate.candidate_name }}</h2>
+                    <p><strong>Email:</strong> {{ Candidate.candidate_Email }}</p>
+                    <p><strong>Contact:</strong> {{ Candidate.candidate_phone }}</p>
+                    <p><strong>Education:</strong> {{ Candidate.candidate_education }}</p>
+                    <p><strong>Experience:</strong> {{ Candidate.candidate_experience }}</p>
+                    <p><strong>Skills:</strong> {{ Candidate.candidate_skills }}</p>
+                    <p><strong>Comments:</strong> {{ Candidate.candidate_comments }}</p>
+                </div>
+               
+
+            {% endfor %}
+        {% else %}
+            <p>No candidates found.</p>
+        {% endif %}
+        <a class="back" href="/index_c">Back</a>
+    </div>
+    
+</body>
+</html>

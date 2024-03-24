@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Help Centre</title>
+    <link rel="stylesheet" href="/CSS/helpform1.css">
+    <style>
+        /* Add your responsive styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .first {
+            text-align: center;
+        }
+
+        .second {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Styles for form elements */
+        .second input[type="text"],
+        .second input[type="number"],
+        .second input[type="email"],
+        .second textarea,
+        .second select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .second textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        /* Styles for buttons */
+        .second .submit {
+            text-align: center;
+        }
+
+        .second button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .second {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            .second button {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <h1>Hello Employers, what's the issue!</h1>
+        <hr>
+    </div>
+    <div class="second">
+        <h2>Please fill below form with your Concern.</h2>
+        <form action="{% url 'Employer' %}" method="post">
+            {% csrf_token %}
+
+            <div class="Employer">
+                Employer Name:<input type="name" id="name" name="employer_name" required>
+            </div>
+            <br>
+            <div class="Id">
+                Employer Id: <input type="number" id="Emplyr_id" name="employer_id"required>
+            </div>
+            <br>
+            <label for="employer_issue_type">Choose a Issue type:</label> 
+            <select name="employer_issue_type" id="employer_issue_type" required> 
+                <option value="Login">Login Related</option> 
+                <option value="Opportunities">Job advertisement related</option> 
+                <option value="Profile">Employee profile related</option> 
+                <option value="Interface">Interface related</option> 
+            </select>
+            <br>
+            <br>
+            <div class="email">
+                Email: <input type="email" id="employer_Email" name="employer_Email"required>
+            </div>
+            <br>           
+            <div class="text">
+                Describe your issue:
+                <br>
+                <textarea id="area" cols="50" rows="10" name="employer_issue"required></textarea>
+            </div>  
+            <div class="submit">
+                <button type="submit" id="but">Submit</button>
+                <button type="reset" id="res">Reset</button>
+                <a href="/help_employer">Back</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

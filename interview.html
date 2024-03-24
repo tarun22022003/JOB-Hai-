@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Form</title>
+    <style>
+        .back{
+            color: black;
+            font-size: larger;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(22, 106, 158);
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:rgb(166, 219, 221);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        form {
+            display: grid;
+            grid-gap: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color 0.2s ease;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interview Form</h1>
+        <form action="{% url 'Candidate' %}" method="post">
+            {% csrf_token %}
+            <div class="name">
+                Full Name: <input type="text" id="name" name="candidate_name"required>
+            </div>
+            <br>
+            <div class="email">
+                Email ID: <input type="email" id="email" name="candidate_Email"required>
+            </div>
+            <br> 
+            <div class="Contact">
+                Contact No. : <input type="number" id="number" name="candidate_phone"required>
+            </div>
+            <br>
+            <div class="education">
+                Education: <input type="text" id="education" name="candidate_education"required>
+            </div>
+            <br>
+            <div class="experience">
+                Experience: <input type="text" id="experience" name="candidate_experience"required>
+            </div>
+            <br>
+            <div class="skilss">
+                Skills: <input type="text" id="skill" name="candidate_skills"required>
+            </div>
+            <br>
+            <div class="comments">
+                Other Information: <input type="text" id="Information" name="candidate_comments"required>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <a class ='back' href="/jobs_">Back</a>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to JOB Hai!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/Images/360_F_467592556_ZWEXBysitotqf2elYGcxY3HQ26PoBiyM.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Set the height of the body to 100% of the viewport height */
+        }
+
+        .navbar {
+            background-color: #343a40;
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            color: chocolate;
+            font-weight: bold;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            width: 50px; /* Adjust the width of the logo */
+            margin-right: 10px; /* Add some spacing between the logo and the text */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: cadetblue;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #cccccc;
+        }
+
+        .content {
+            margin-top: 50px;
+            text-align: center;
+            color: black; /* Change text color to white */
+            font-size: larger;
+        }
+
+        .content h1 {
+            font-weight: bolder;
+        }
+
+        .btn {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #signout {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar-brand {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="/static/Images/pexels-andrea-piacquadio-3760069.jpg" alt="JOB Hai Logo"> Welcome to JOB hai!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index_c">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view">Candidates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs_view">Uploads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services_c">Services</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container content">
+    <h1>Welcome to JOB hai! Portal</h1>
+    <p class="lead">Explore thousands of job opportunities.</p>
+    <a href="/help_employer" class="btn btn-primary">Help Centre</a>
+    <a href="/feedback2" class="btn btn-secondary">Feedback</a>
+    <hr>
+    <a id="signout" href="/signout">Sign out</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

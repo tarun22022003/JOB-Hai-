@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Centre</title>
+    <link rel="stylesheet" href="/CSS/selectionpage.css">
+    <style>
+        body {
+            background: url("/static/Images/help-desk-customer-care-team-260nw-1148761280.jpg") no-repeat center center/cover;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff; /* Change font color to white */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background-color: #555;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .tag {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .help {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .searchbar {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #searchbar {
+            width: 60%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .search-btn {
+            background-color: #333;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-btn img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        .redirect {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn + .btn {
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .logo {
+                flex-direction: column;
+            }
+
+            .tag {
+                font-size: 20px;
+            }
+
+            #searchbar {
+                width: 80%;
+            }
+        }
+        .back{
+            font-weight:bolder;
+            border: 3px solid black;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/static/Images/pexels-andrea-piacquadio-3760069.jpg" alt="Logo">
+            <div class="tag">HELP CENTRE</div>
+        </div>
+    </header>
+    
+    <div class="help">
+        <h2>How can we help you?</h2>
+    </div>
+    
+    <div class="searchbar">
+        <input type="text" name="searchbar" id="searchbar" placeholder="Search for your query">
+        <button class="search-btn" tabindex="0"><img src="/static/Images/search.png" alt="Search Icon"></button>
+    </div>
+    
+    <div class="redirect">
+        <!-- <a href="/helpform1" class="btn">Employer Help Centre</a> -->
+        <a href="/helpform2" class="btn">Employee Help Centre</a>
+    </div>
+    
+    <br>
+    <a class="back" href="/index">Back</a>
+
+</body>
+
+</html>

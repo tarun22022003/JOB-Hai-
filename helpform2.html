@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Help Centre</title>
+    <link rel="stylesheet" href="/CSS/helpform2.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for form */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Center align heading */
+        .container h2 {
+            text-align: center;
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="email"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        /* Button styles */
+        .submit {
+            text-align: center;
+        }
+
+        .submit button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .submit button[type="reset"] {
+            background-color: #dc3545;
+        }
+
+        /* Back link styles */
+        .submit a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            form input,
+            form textarea,
+            form select {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var employee_issue_type = document.getElementById('employee_issue_type').value;
+            if (employee_issue_type === '') {
+                alert('Please select an issue type.');
+                return false;
+            }
+            return true;
+        }
+    </script>  
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Employees, How shall we help you?</h1>
+        <hr>
+        <form action="{% url 'Employee' %}" method="post" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <div class="Employee">
+                <label for="Name">Employee Name:</label>
+                <input type="text" id="Name" name="employee_name" required>
+            </div>
+            <div class="Id">
+                <label for="Empl_id">Employee Id:</label>
+                <input type="number" id="Empl_id" name="employee_id" required>
+            </div>
+            <div>
+                <label for="employee_issue_type">Choose an Issue type:</label>
+                <select id="employee_issue_type" name="employee_issue_type" required> 
+                    <option value="Login">Login Related</option> 
+                    <option value="Filling details">Filling details related</option> 
+                    <option value="Sorting for jobs">Job searching related</option> 
+                    <option value="Interface">Interface related</option> 
+                </select>
+            </div>
+            <div class="email" >
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="employee_Email" required>
+            </div>
+            <div class="text" name="employee_issue" >
+                <label for="employee_issue">Describe your issue:</label>
+                <textarea name="employee_issue" id="area" cols="50" rows="10" required></textarea>
+            </div>
+            <div class="submit">
+                <button type="submit" id="but">Submit</button>
+                <button type="reset" id="res">Reset</button>
+                <br>
+                <a href="/help_c">Back</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

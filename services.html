@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:cornflowerblue;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .service-card p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .service-card strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="service-card">
+            <a href="/resumeb/"><h2>Resume Builder</h2></a>
+            <p><strong>Description:</strong> Create a Resume which includes all your details and instantly download it as PDF.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>All Details Covered</li>
+                <li>Easy-to-use interface</li>
+                <li>Insant Create and Use</li>
+            </ul>
+            <p><strong>Price:</strong> Free</p>
+            <p><strong>Availability:</strong> Available to our Users.</p>
+        </div>
+        <!-- Add more service cards as needed -->
+    </div>
+    <a href="/index/" class="back-link">Back to Home</a>
+</body>
+</html>
