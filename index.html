@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB Hai! - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styles for specific elements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/Images/pexels-andrea-piacquadio-3760069.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: #fff; /* Adjust text color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color:black; /* Adjust heading color */
+        }
+
+        p {
+            font-size: 25px;
+            margin-bottom: 20px;
+            color:black; /* Adjust paragraph color */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        /* Style for footer */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to JOB Hai!</h1>
+            <p>Your ultimate destination for finding jobs and hiring talent</p>
+            <!-- Dropdown for login -->
+            <div class="dropdown">
+                <button class="btn">Login</button>
+                <div class="dropdown-content">
+                    <a href="/signin">Employee</a>
+                    <a href="/signin_c">Employer</a>
+                </div>
+            </div>
+            <!-- Dropdown for signup -->
+            <div class="dropdown">
+                <button class="btn">Sign Up</button>
+                <div class="dropdown-content">
+                    <a href="/signup">Employee</a>
+                    <a href="/signup_c">Employer</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <p>&copy; 2024 JOB Hai! All rights reserved.</p>
+    </footer>
+</body>
+</html>
